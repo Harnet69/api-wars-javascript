@@ -6,10 +6,18 @@ body{
     color: white;
 }
 
-header, footer{
+#content{
+    margin: 0 auto;
+    width: 96%;
+}
+
+nav, footer{
     background-color: white;
     background-color: rgba(255, 255, 255, 0.3);
     text-align: center;
+}
+header img{
+    margin-top: 5px;
 }
 
 h1{
@@ -21,11 +29,37 @@ h2{
 }
 
 .table{
+    margin-bottom: 40px;
     background-color: white;
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+.form-control{
+    color: white;
+    background-color: black;
+    border: 4px solid #FFC107;
+    border-radius: 10px;
+}
+.form-control:focus {
+    color: #FFC107;
+    border-color: #FFC107;
+    background-color: gray;
+}
+#log_in{
+    color: white;
+    background-color: black;
+    border: 4px solid #FFC107;
+    border-radius: 10px;
+    height: 40px;
+}
+
+#log_in:hover {
+    color: #FFC107;
+    background-color: gray;
+}
+
 footer {
+    color: #FFC107;
     position: fixed;
     left: 0;
     bottom: 0;
