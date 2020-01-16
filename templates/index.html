@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/planets.js"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Star Wars universe planets</h1>
+    <button type="button" class="prev-btn">Previous</button>
+    <button type="button" class="next-btn">Next</button>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Diameter</th>
+                <th scope="col">Climate</th>
+                <th scope="col">Terrain</th>
+                <th scope="col">Surface Water Percentage</th>
+                <th scope="col">Population</th>
+                <th scope="col">Residents</th>
+            </tr>
+        </thead>
+        <tbody id="planetsData"></tbody>
+    </table>
+{% endblock %}
