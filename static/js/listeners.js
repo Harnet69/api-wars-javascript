@@ -6,9 +6,16 @@ export function openPopUpLoginForm(openButton, targetElem) {
     })
 }
 
+// add listener to close pop up login form
 export function cancelPopUpLoginForm(cancelButton, targetElem, retrieveElem) {
     cancelButton.addEventListener('click', function () {
         targetElem.classList.remove('display-on');
         retrieveElem.style.display = 'block';
+    })
+}
+
+export function nextPrevBtn(btn, link) {
+    btn.addEventListener('click', function () {
+        alert(link);
     })
 }
