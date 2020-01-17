@@ -29,7 +29,7 @@ function pageDownload() {
             planetsData[i].push(results[i]["surface_water"]);
             planetsData[i].push(results[i]["population"]);
             if (results[i]["residents"].length > 0) {
-                planetsData[i].push(results[i]["residents"].length + " resident(s)");
+                planetsData[i].push(results[i]["residents"].length + "resid");
             } else {
                 planetsData[i].push("No known residents");
             }
