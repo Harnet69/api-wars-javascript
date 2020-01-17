@@ -1,13 +1,14 @@
 import {pageDownload} from './apiManager.js'
 import {nextPrevBtn} from './listeners.js'
 
-let prevBtn = document.getElementById('prev-btn');
-let nextBtn = document.getElementById('next-btn');
+export let prevBtnEl = document.getElementById('prev-btn');
+export let nextBtnEl = document.getElementById('next-btn');
 
 let planetsData = pageDownload(); // data of planets
 
 
 export function fillTableOfPlanets() {
+    console.log(planetsData);
     let html = "";
     for (let tr = 0; tr < Object.keys(planetsData).length; tr++) {
         html+= "<tr>";

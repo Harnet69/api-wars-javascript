@@ -1,11 +1,16 @@
-import {fillTableOfPlanets} from './planets.js'
+import {fillTableOfPlanets, prevBtnEl, nextBtnEl} from './planets.js'
+import {nextPrevBtn} from './listeners.js'
+
 // get planets data from API
 export function pageDownload(page='https://swapi.co/api/planets') {
     let planetsData = [];
     $.get(page, function (data) {
         let results = data["results"];
-        planetsData[0] = [data["next"], data["previous"]];
-        for (let i = 1; i < results.length; i++) {
+        let nextBtnLink = data["next"];
+        let prevBtnLink = data["previous"];
+        nextPrevBtn(nextBtnEl, nextBtnLink);
+        nextPrevBtn(prevBtnEl, prevBtnLink);
+        for (let i = 0; i < results.length; i++) {
             planetsData[i] = [];
             planetsData[i].push(results[i]["name"]);
             planetsData[i].push(results[i]["diameter"] + " km");
@@ -16,11 +21,11 @@ export function pageDownload(page='https://swapi.co/api/planets') {
 
             if (results[i]["residents"].length > 0) {
                 planetsData[i].push(results[i]["residents"].length + " resid");
+                planetsData[i].push(results[i]["residents"]); // planet resident links
             } else {
                 planetsData[i].push("No known residents");
             }
         }
-        console.log(planetsData);
         fillTableOfPlanets();
     });
     return planetsData;
