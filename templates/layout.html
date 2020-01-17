@@ -10,14 +10,14 @@
         <link rel="stylesheet" href="/static/css/normalize.css">
         <script type="text/javascript" src="/static/js/jquery.js"></script>
         <script type="text/javascript" src="/static/js/planets.js"></script>
-        <script type="text/javascript" src="/static/js/loginForm.js"></script>
+        <script type="module"  src="/static/js/loginForm.js"></script>
         {% block head %} {% endblock %}
         <title>Star Wars universe</title>
     </head>
     <body>
         <nav class="navbar navbar-light justify-content-between">
             <a class="navbar-brand" href="/"><img style="height: 50px" src="/static/img/logo_cropped.png" alt=""></a>
-            <button class="open-button" onclick="openForm()">Log in</button>
+            <button class="open-button" id="open-button">Log in</button>
             <div class="form-popup" id="myForm">
                 <form action="#" class="form-container">
                     <label for="login"><b>Login</b>
@@ -29,7 +29,7 @@
                     </label>
 
                     <button type="submit" class="btn">Login</button>
-                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                    <button type="button" class="btn cancel" id="cancel_btn">Close</button>
                 </form>
             </div>
         </nav>
