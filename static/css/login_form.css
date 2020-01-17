@@ -1,9 +1,10 @@
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
-    background-color: #555;
+    background-color: #576894;
     color: white;
     padding: 16px 20px;
-    border: none;
+    border: 4px solid #FFC107;
+    border-radius: 10px;
     cursor: pointer;
     opacity: 0.8;
     position: fixed;
@@ -24,22 +25,25 @@
 /* Add styles to the form container */
 .form-container {
     max-width: 300px;
-    padding: 10px;
+    padding: 0 10px;
     background-color: white;
     background-color: rgba(255, 255, 255, 0.7);
     border: 4px solid #FFC107;
     border-radius: 10px;
 }
+.form-container label{
+    padding-top: 5px;
+    opacity: 1;
+    color: #576894;
+}
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
     width: 100%;
-    padding: 15px;
+    padding: 5px;
     margin: 5px 0 22px 0;
     border: 2px solid #FFC107;
     border-radius: 10px;
-    background-color: white;
-    background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* When the inputs get focus, do something */
@@ -52,7 +56,7 @@
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-    background-color: #4CAF50;
+    background-color: #6F8CAC;
     color: white;
     padding: 16px 20px;
     cursor: pointer;
@@ -65,6 +69,9 @@
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
+    background-color: #F2AAAD;
+}
+.form-container .cancel:hover {
     background-color: red;
 }
 
