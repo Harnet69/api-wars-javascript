@@ -1,16 +1,13 @@
 from flask import Flask, render_template
+planets_specs = ['Name', 'Diameter', 'Climate', 'Terrain', 'Surface Water Percentage', 'Population', 'Residents','Vote']
+
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
-
-
-@app.route('/favicon.ico')
-def fav():
-    return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico')
+    return render_template('index.html', planets_specs=planets_specs)
 
 
 if __name__ == '__main__':

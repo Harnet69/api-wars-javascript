@@ -10,13 +10,9 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Diameter</th>
-                <th scope="col">Climate</th>
-                <th scope="col">Terrain</th>
-                <th scope="col">Surface Water Percentage</th>
-                <th scope="col">Population</th>
-                <th scope="col">Residents</th>
+                {% for planet_spec in planets_specs %}
+                    <th scope="col">{{planet_spec}}</th>
+                {% endfor %}
             </tr>
         </thead>
         <tbody id="planetsData"></tbody>
