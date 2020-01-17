@@ -2,11 +2,13 @@
 export function openPopUpLoginForm(openButton, targetElem) {
     openButton.addEventListener('click', function () {
         targetElem.classList.add('display-on');
+        openButton.style.display = 'none';
     })
 }
 
-export function cancelPopUpLoginForm(openButton, targetElem) {
-    openButton.addEventListener('click', function () {
+export function cancelPopUpLoginForm(cancelButton, targetElem, retrieveElem) {
+    cancelButton.addEventListener('click', function () {
         targetElem.classList.remove('display-on');
+        retrieveElem.style.display = 'block';
     })
 }
