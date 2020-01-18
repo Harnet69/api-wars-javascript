@@ -43,7 +43,7 @@ export function pageDownload(page='https://swapi.co/api/planets', planetDataREse
 
 // get  residents of the planet from API and form a pop up
 export function getResidentInfo(page) {
-    console.log(page,);
+    // console.log(page,);
     $.get(page, function (data) {
         // let results = data["results"];
         console.log(data); // !!!!!!!!!!!!!!!!!!!!!!!

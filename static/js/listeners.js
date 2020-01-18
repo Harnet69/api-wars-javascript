@@ -1,5 +1,5 @@
 import {pageDownload, getResidentInfo} from './apiManager.js'
-import {fillTableOfPlanets, prevBtnEl, nextBtnEl, showResidentsList, showResidentsDiv} from './planets.js'
+import {fillTableOfPlanets, prevBtnEl, nextBtnEl, showResidentsList, showResidentsDiv, fillResidentsTable} from './planets.js'
 // add listener to open pop up login form
 export function openPopUpLoginForm(openButton, targetElem) {
     openButton.addEventListener('click', function () {
@@ -59,12 +59,11 @@ export function residentsButton(planetsResidents) {
                 alert('Mouse click open');
                 // get residents data
                 let bnt = document.getElementById('nav-buttons');
-                let residentDIv = showResidentsDiv(planetResident[1]);
+                let residentDIv = showResidentsDiv();
                 bnt.appendChild(residentDIv);
+                fillResidentsTable(planetResident[1]);
                 // console.log(residentDIv);
-                for(let i=0;i<planetResident[1].length;i++){
-                    getResidentInfo(planetResident[1][i]);
-                }
+
                 // show residents links
                 // let residents = showResidentsList(planetResident[1]);
                 // elem.parentElement.appendChild(residents);

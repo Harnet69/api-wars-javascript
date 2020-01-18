@@ -1,4 +1,4 @@
-import {pageDownload} from './apiManager.js'
+import {pageDownload, getResidentInfo} from './apiManager.js'
 import {nextPrevBtnListener, residentsButton} from './listeners.js'
 
 export let prevBtnEl = document.getElementById('prev-btn');
@@ -46,7 +46,7 @@ export function showResidentsList(planetResidents) {
 }
 
 // create div with data of planet residents
-export function showResidentsDiv(planetResidents) {
+export function showResidentsDiv() {
     residentsDiv.setAttribute('id', 'resident-div');
     let table = document.createElement('table');
     table.classList.add('residentsDiv');
@@ -65,15 +65,14 @@ export function showResidentsDiv(planetResidents) {
         tr.appendChild(th);
         th.textContent = residentDetail;
     }
-
-    // fill the table of residents
-    // for(let i=0;i<planetResidents.length;i++){
-    //     getResidentInfo(planetResidents[i]);
-    // }
-
-
-
     return residentsDiv;
+}
+
+//  fill the table of residents
+export function fillResidentsTable(planetResidents) {
+    for(let i=0;i<planetResidents.length;i++){
+        getResidentInfo(planetResidents[i]);
+    }
 }
 
 pageDownload(); // data of planets
