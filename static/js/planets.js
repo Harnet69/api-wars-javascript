@@ -3,6 +3,7 @@ import {nextPrevBtnListener, residentsButton} from './listeners.js'
 
 export let prevBtnEl = document.getElementById('prev-btn');
 export let nextBtnEl = document.getElementById('next-btn');
+let residentsDiv = document.createElement('div');
 
 let planetsResidents = [];
 
