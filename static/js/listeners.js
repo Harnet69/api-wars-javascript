@@ -16,6 +16,7 @@ export function cancelPopUpLoginForm(cancelButton, targetElem, retrieveElem) {
     })
 }
 
+// add listener to next/previous buttons
 export function nextPrevBtnListener(btn, link) {
     btn.addEventListener('click', function () {
         // removeAllListeners(document.getElementById('next-btn'));
@@ -31,19 +32,33 @@ export function removeAllListeners(elemForClear) {
     elemForClear.removeEventListener('click', nextPrevBtnListener, false);
 }
 
-// add listener to planet residents button
+// add listeners to planet residents div and button
 export function residentsButton(planetsResidents) {
     // console.log(planetsResidents);
     for(let planetResident of planetsResidents) {
         let planetResidentTR = planetResident[0];
         let elem = document.getElementById(planetResidentTR);
-        elem.addEventListener('click', function () {
-            // console.log(planetResidentTR + ' Click ' + planetResident[1]);
-            let residents = showResidents(planetResident[1]);
-            // let residentsDiv = document.createElement('div');
-            // residentsDiv.classList.add('residents-div');
-            // residentsDiv.innerHTML = planetResident[1];
-            elem.parentElement.appendChild(residents);
+
+        elem.parentElement.addEventListener('click', function () {
+            if(!elem.parentElement.children[1]) { // if resident was displayed already
+                let residents = showResidents(planetResident[1]);
+                elem.parentElement.appendChild(residents);
+            }
+        });
+        elem.parentElement.addEventListener('mouseover', function () {
+            if(!elem.parentElement.children[1]) { // if resident was displayed already
+                let residents = showResidents(planetResident[1]);
+                elem.parentElement.appendChild(residents);
+            }
+        });
+        elem.parentElement.addEventListener('mouseleave', function () {
+            elem.parentElement.children[1].remove();
+        });
+
+        elem.parentElement.addEventListener('click', function () {
+            if(elem.parentElement.children[1]) {
+                elem.parentElement.children[1].remove();
+            }
         });
     }
     // let residentsDiv = createResidentsDiv();

@@ -1,7 +1,7 @@
 import {fillTableOfPlanets, prevBtnEl, nextBtnEl} from './planets.js'
 import {nextPrevBtnListener, removeAllListeners} from './listeners.js'
 
-// get planets data from API
+// get planets data from API and form a page
 export function pageDownload(page='https://swapi.co/api/planets', planetDataREset=false) {
         console.log(page,);
         if(planetDataREset){
@@ -10,9 +10,10 @@ export function pageDownload(page='https://swapi.co/api/planets', planetDataREse
             // removeAllListeners(prevBtnEl);
         }
         let planetsData = [];
+
     $.get(page, function (data) {
         let results = data["results"];
-        console.log(results);
+        // console.log(results); // !!!!!!!!!!!!!!!!!!!!!!!
         let nextBtnLink = data["next"];
         let prevBtnLink = data["previous"];
 

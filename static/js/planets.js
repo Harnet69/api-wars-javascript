@@ -6,7 +6,7 @@ export let nextBtnEl = document.getElementById('next-btn');
 
 let planetsResidents = [];
 
-
+// fill table with planets
 export function fillTableOfPlanets(planetsData) {
     // console.log(planetsData); !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     planetsResidents = [];
@@ -32,6 +32,7 @@ export function fillTableOfPlanets(planetsData) {
     residentsButton(planetsResidents);
 }
 
+// create list of planet residents
 export function showResidents(planetResidents) {
     let ulResidents = document.createElement('ul');
     for(let resident of planetResidents){
