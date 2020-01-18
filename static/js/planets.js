@@ -3,7 +3,6 @@ import {nextPrevBtnListener, residentsButton} from './listeners.js'
 
 export let prevBtnEl = document.getElementById('prev-btn');
 export let nextBtnEl = document.getElementById('next-btn');
-// let residentsDiv = document.createElement('div');
 
 let planetsResidents = [];
 
@@ -33,10 +32,14 @@ export function fillTableOfPlanets(planetsData) {
     residentsButton(planetsResidents);
 }
 
-export function createResidentsDiv() {
-    residentsDiv.classList.add('residents-div');
-    residentsDiv.innerHTML = planetsResidents;
-    return residentsDiv;
+export function showResidents(planetResidents) {
+    let ulResidents = document.createElement('ul');
+    for(let resident of planetResidents){
+        let liResidents = document.createElement('li');
+        liResidents.textContent = resident;
+        ulResidents.appendChild(liResidents);
+    }
+    return ulResidents;
 }
 
 
