@@ -1,4 +1,4 @@
-import {fillTableOfPlanets, prevBtnEl, nextBtnEl} from './planets.js'
+import {fillTableOfPlanets, prevBtnEl, nextBtnEl, showResidentsDiv} from './planets.js'
 import {nextPrevBtnListener, removeAllListeners} from './listeners.js'
 
 // get planets data from API and form a page

@@ -4,6 +4,7 @@ import {nextPrevBtnListener, residentsButton} from './listeners.js'
 export let prevBtnEl = document.getElementById('prev-btn');
 export let nextBtnEl = document.getElementById('next-btn');
 let residentsDiv = document.createElement('div');
+let residentDetails = ['name','height','mass','skin color', 'hair color', 'eye color', 'birth year', 'gender'];
 
 let planetsResidents = [];
 
@@ -34,7 +35,7 @@ export function fillTableOfPlanets(planetsData) {
 }
 
 // create list of planet residents
-export function showResidents(planetResidents) {
+export function showResidentsList(planetResidents) {
     let ulResidents = document.createElement('ul');
     for(let resident of planetResidents){
         let liResidents = document.createElement('li');
@@ -44,7 +45,38 @@ export function showResidents(planetResidents) {
     return ulResidents;
 }
 
+// create div with data of planet residents
+export function showResidentsDiv(planetResidents) {
+    // residentsDiv.classList.add('residentsDiv');
+    let table = document.createElement('table');
+    table.classList.add('residentsDiv');
+    table.classList.add('table');
+    table.classList.add('table-bordered');
+    residentsDiv.appendChild(table);
+    let thead = document.createElement('thead');
+    table.appendChild(thead);
+    let tr = document.createElement('tr');
+    thead.appendChild(tr);
 
+    // th.textContent = 'There is a planets residents';
+    // create table headers
+    for(let residentDetail of residentDetails){
+        let th = document.createElement('th');
+        tr.appendChild(th);
+        th.textContent = residentDetail;
+    }
+
+    // fill the table of residents
+    // for(let i=0;i<planetResidents.length;i++){
+    //     getResidentInfo(planetResidents[i]);
+    // }
+
+
+
+    return residentsDiv;
+}
+
+alert('Boom!');
 pageDownload(); // data of planets
 
 

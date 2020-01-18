@@ -84,9 +84,6 @@ footer {
 }
 
 button{
-    /*width: 500px;*/
-    /*height: 300px;*/
-    /*background-color: #B5C6E0;*/
     background-color: rgba(181, 198, 224, 0.7);
     cursor: pointer;
 }
@@ -94,11 +91,23 @@ button:hover{
     border: 4px solid #FFC107;
     border-radius: 10px;
 }
+
 .residents{
     cursor: pointer;
     border: 4px solid #FFC107;
 }
-.residents:hover{
+
+.residents:hover {
     border: 2px solid #FFC107;
     background-color: rgba(181, 198, 224, 0.3);
+}
+
+.residentsDiv{
+    color: black;
+    position: fixed;
+    width: 71%;
+    padding: 0 10px;
+    background-color: white;
+    border: 4px solid #FFC107;
+    border-radius: 10px;
 }
