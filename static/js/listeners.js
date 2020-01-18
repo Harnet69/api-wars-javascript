@@ -39,27 +39,49 @@ export function residentsButton(planetsResidents) {
         let planetResidentTR = planetResident[0];
         let elem = document.getElementById(planetResidentTR);
 
-        elem.parentElement.addEventListener('click', function () {
-            if(!elem.parentElement.children[1]) { // if resident was displayed already
-                let residents = showResidents(planetResident[1]);
-                elem.parentElement.appendChild(residents);
+        // click on residents Div(don't fire child elements, COOL!!!) to show its list
+        elem.parentElement.addEventListener('click', function(event) {
+            if (event.currentTarget !== event.target) {
+                return;
             }
-        });
-        elem.parentElement.addEventListener('mouseover', function () {
-            if(!elem.parentElement.children[1]) { // if resident was displayed already
-                let residents = showResidents(planetResident[1]);
-                elem.parentElement.appendChild(residents);
-            }
-        });
-        elem.parentElement.addEventListener('mouseleave', function () {
-            elem.parentElement.children[1].remove();
-        });
 
-        elem.parentElement.addEventListener('click', function () {
-            if(elem.parentElement.children[1]) {
+            if(!elem.parentElement.children[1]) { // if resident was displayed already
+                let residents = showResidents(planetResident[1]);
+                elem.parentElement.appendChild(residents);
+            }else{
+                elem.parentElement.children[1].remove();
+            }
+        }, false);
+
+        // click on residents button to open pop up window
+        elem.addEventListener('click', function () {
+            if(!elem.parentElement.children[1]) { // if resident was displayed already
+                alert('Mouse click open');
+                let residents = showResidents(planetResident[1]);
+                elem.parentElement.appendChild(residents);
+            }
+            else{
+                alert('Mouse click close');
                 elem.parentElement.children[1].remove();
             }
         });
+        // mouse over above at a residents Div for its closing
+        // elem.parentElement.addEventListener('mouseover', function () {
+        //     if(!elem.parentElement.children[1]) { // if resident was displayed already
+        //         let residents = showResidents(planetResident[1]);
+        //         elem.parentElement.appendChild(residents);
+        //     }
+        // });
+        // mouse over above a residents Div for its closing
+        // elem.parentElement.addEventListener('mouseleave', function () {
+        //     elem.parentElement.children[1].remove();
+        // });
+        // click on residents Div for its closing
+        // elem.parentElement.addEventListener('click', function () {
+        //     if(elem.parentElement.children[1]) {
+        //         elem.parentElement.children[1].remove();
+        //     }
+        // });
     }
     // let residentsDiv = createResidentsDiv();
 }

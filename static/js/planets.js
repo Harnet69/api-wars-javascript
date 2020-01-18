@@ -37,7 +37,7 @@ export function showResidents(planetResidents) {
     let ulResidents = document.createElement('ul');
     for(let resident of planetResidents){
         let liResidents = document.createElement('li');
-        liResidents.textContent = resident;
+        liResidents.innerHTML = "<a href='"+resident+"'>"+resident+"</a>";
         ulResidents.appendChild(liResidents);
     }
     return ulResidents;
