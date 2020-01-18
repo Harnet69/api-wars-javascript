@@ -33,11 +33,16 @@ export function removeAllListeners(elemForClear) {
 
 // add listener to planet residents button
 export function residentsButton(planetsResidents) {
+    // console.log(planetsResidents);
     for(let planetResident of planetsResidents) {
         let planetResidentTR = planetResident[0];
         let elem = document.getElementById(planetResidentTR);
         elem.addEventListener('click', function () {
-            alert(planetResidentTR + ' Click');
+            console.log(planetResidentTR + ' Click ' + planetResident[1]);
+            let residentsDiv = document.createElement('div');
+            residentsDiv.classList.add('residents-div');
+            residentsDiv.innerHTML = planetResident[1];
+            elem.appendChild(residentsDiv);
         });
     }
     // let residentsDiv = createResidentsDiv();
