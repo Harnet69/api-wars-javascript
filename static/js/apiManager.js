@@ -1,15 +1,25 @@
 import {fillTableOfPlanets, prevBtnEl, nextBtnEl} from './planets.js'
-import {nextPrevBtn} from './listeners.js'
+import {nextPrevBtnListener, removeAllListeners} from './listeners.js'
 
 // get planets data from API
-export function pageDownload(page='https://swapi.co/api/planets') {
-    let planetsData = [];
+export function pageDownload(page='https://swapi.co/api/planets', planetDataREset=false) {
+        console.log(page,);
+        if(planetDataREset){
+            let planetsData = [];
+            // removeAllListeners(nextBtnEl);
+            // removeAllListeners(prevBtnEl);
+        }
+        let planetsData = [];
     $.get(page, function (data) {
         let results = data["results"];
+        console.log(results);
         let nextBtnLink = data["next"];
         let prevBtnLink = data["previous"];
-        nextPrevBtn(nextBtnEl, nextBtnLink);
-        nextPrevBtn(prevBtnEl, prevBtnLink);
+        console.log(prevBtnEl, prevBtnLink);
+
+        if(nextBtnLink) {nextPrevBtnListener(nextBtnEl, nextBtnLink);}
+        if(prevBtnLink){nextPrevBtnListener(prevBtnEl, prevBtnLink); }
+
         for (let i = 0; i < results.length; i++) {
             planetsData[i] = [];
             planetsData[i].push(results[i]["name"]);
@@ -26,9 +36,9 @@ export function pageDownload(page='https://swapi.co/api/planets') {
                 planetsData[i].push("No known residents");
             }
         }
-        fillTableOfPlanets();
+        fillTableOfPlanets(planetsData);
     });
-    return planetsData;
+    // return planetsData;
 }
 
 

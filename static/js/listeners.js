@@ -1,3 +1,5 @@
+import {pageDownload} from './apiManager.js'
+import {fillTableOfPlanets, prevBtnEl, nextBtnEl} from './planets.js'
 // add listener to open pop up login form
 export function openPopUpLoginForm(openButton, targetElem) {
     openButton.addEventListener('click', function () {
@@ -14,8 +16,17 @@ export function cancelPopUpLoginForm(cancelButton, targetElem, retrieveElem) {
     })
 }
 
-export function nextPrevBtn(btn, link) {
+export function nextPrevBtnListener(btn, link) {
     btn.addEventListener('click', function () {
-        alert(link);
+        // removeAllListeners(document.getElementById('next-btn'));
+        document.getElementById("planetsData").innerHTML = '';
+        pageDownload(link, true);
     })
+}
+
+// remove all listeners from an element
+export function removeAllListeners(elemForClear) {
+    // let new_element = elemForClear.cloneNode(true);
+    // elemForClear.parentNode.replaceChild(new_element, elemForClear);
+    elemForClear.removeEventListener('click', nextPrevBtnListener, true);
 }
