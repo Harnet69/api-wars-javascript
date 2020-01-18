@@ -1,5 +1,5 @@
 import {pageDownload} from './apiManager.js'
-import {fillTableOfPlanets, prevBtnEl, nextBtnEl} from './planets.js'
+import {fillTableOfPlanets, prevBtnEl, nextBtnEl, createResidentsDiv} from './planets.js'
 // add listener to open pop up login form
 export function openPopUpLoginForm(openButton, targetElem) {
     openButton.addEventListener('click', function () {
@@ -28,5 +28,17 @@ export function nextPrevBtnListener(btn, link) {
 export function removeAllListeners(elemForClear) {
     // let new_element = elemForClear.cloneNode(true);
     // elemForClear.parentNode.replaceChild(new_element, elemForClear);
-    elemForClear.removeEventListener('click', nextPrevBtnListener, true);
+    elemForClear.removeEventListener('click', nextPrevBtnListener, false);
+}
+
+// add listener to planet residents button
+export function residentsButton(planetsResidents) {
+    for(let planetResident of planetsResidents) {
+        let planetResidentTR = planetResident[0];
+        let elem = document.getElementById(planetResidentTR);
+        elem.addEventListener('click', function () {
+            alert(planetResidentTR + ' Click');
+        });
+    }
+    // let residentsDiv = createResidentsDiv();
 }

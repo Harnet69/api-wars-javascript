@@ -15,7 +15,6 @@ export function pageDownload(page='https://swapi.co/api/planets', planetDataREse
         console.log(results);
         let nextBtnLink = data["next"];
         let prevBtnLink = data["previous"];
-        console.log(prevBtnEl, prevBtnLink);
 
         if(nextBtnLink) {nextPrevBtnListener(nextBtnEl, nextBtnLink);}
         if(prevBtnLink){nextPrevBtnListener(prevBtnEl, prevBtnLink); }

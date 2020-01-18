@@ -1,21 +1,22 @@
 import {pageDownload} from './apiManager.js'
-import {nextPrevBtnListener} from './listeners.js'
+import {nextPrevBtnListener, residentsButton} from './listeners.js'
 
 export let prevBtnEl = document.getElementById('prev-btn');
 export let nextBtnEl = document.getElementById('next-btn');
-
-pageDownload(); // data of planets
+let residentsDiv = document.createElement('div');
 
 
 export function fillTableOfPlanets(planetsData) {
     // console.log(planetsData); !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    let planetsResidents = [];
     let html = "";
     for (let tr = 0; tr < Object.keys(planetsData).length; tr++) {
         html+= "<tr>";
         for (let td = 0;td < 7; td++){
             if (td === 6) {
                 if (planetsData[tr][td] !== "No known residents") {
-                    html+= "<td>" + '<button type="button">' + planetsData[tr][td] + '</button>' + "</td>";
+                    html+= "<td>" + '<button type="button" id="'+tr+'">' + planetsData[tr][td] + '</button>' + "</td>";
+                    planetsResidents.push([tr, planetsData[tr][7]]); // fill array with planet residents objects
                 } else {
                     html+= "<td>" + planetsData[tr][td] + "</td>";
                 }
@@ -26,9 +27,17 @@ export function fillTableOfPlanets(planetsData) {
         html+= "</tr>";
     }
     document.getElementById("planetsData").innerHTML = html;
+    // console.log(planetsResidents);
+    residentsButton(planetsResidents);
+}
+
+export function createResidentsDiv() {
+    residentsDiv.classList.add('residents-div');
+    return residentsDiv;
 }
 
 
+pageDownload(); // data of planets
 
 
 
