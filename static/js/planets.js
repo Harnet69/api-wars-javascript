@@ -47,7 +47,7 @@ export function showResidentsList(planetResidents) {
 
 // create div with data of planet residents
 export function showResidentsDiv(planetResidents) {
-    // residentsDiv.classList.add('residentsDiv');
+    residentsDiv.setAttribute('id', 'resident-div');
     let table = document.createElement('table');
     table.classList.add('residentsDiv');
     table.classList.add('table');
@@ -76,7 +76,6 @@ export function showResidentsDiv(planetResidents) {
     return residentsDiv;
 }
 
-alert('Boom!');
 pageDownload(); // data of planets
 
 

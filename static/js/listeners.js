@@ -55,7 +55,7 @@ export function residentsButton(planetsResidents) {
 
         // click on residents button to open pop up window
         elem.addEventListener('click', function () {
-            if(!elem.parentElement.children[1]) { // if resident was displayed already
+            if(!document.getElementById('resident-div')) { // if resident was displayed already
                 alert('Mouse click open');
                 // get residents data
                 let bnt = document.getElementById('nav-buttons');
@@ -66,12 +66,12 @@ export function residentsButton(planetsResidents) {
                     getResidentInfo(planetResident[1][i]);
                 }
                 // show residents links
-                let residents = showResidentsList(planetResident[1]);
-                elem.parentElement.appendChild(residents);
+                // let residents = showResidentsList(planetResident[1]);
+                // elem.parentElement.appendChild(residents);
             }
             else{
                 alert('Mouse click close');
-                elem.parentElement.children[1].remove();
+                document.getElementById('resident-div').remove();
             }
         });
     }
