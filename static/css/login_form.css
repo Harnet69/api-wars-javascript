@@ -1,7 +1,8 @@
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
-    background-color: #576894;
+    background-color: rgba(87, 104, 148, 0.4);
     color: white;
+    margin-right: 15px;
     padding: 12px 15px;
     border: 4px solid #FFC107;
     border-radius: 10px;
@@ -33,6 +34,7 @@
 
 /* Add styles to the form container */
 .form-container {
+    margin-right: 15px;
     max-width: 200px;
     padding: 0 10px;
     background-color: white;

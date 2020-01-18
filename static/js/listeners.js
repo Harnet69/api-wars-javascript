@@ -65,23 +65,6 @@ export function residentsButton(planetsResidents) {
                 elem.parentElement.children[1].remove();
             }
         });
-        // mouse over above at a residents Div for its closing
-        // elem.parentElement.addEventListener('mouseover', function () {
-        //     if(!elem.parentElement.children[1]) { // if resident was displayed already
-        //         let residents = showResidents(planetResident[1]);
-        //         elem.parentElement.appendChild(residents);
-        //     }
-        // });
-        // mouse over above a residents Div for its closing
-        // elem.parentElement.addEventListener('mouseleave', function () {
-        //     elem.parentElement.children[1].remove();
-        // });
-        // click on residents Div for its closing
-        // elem.parentElement.addEventListener('click', function () {
-        //     if(elem.parentElement.children[1]) {
-        //         elem.parentElement.children[1].remove();
-        //     }
-        // });
     }
     // let residentsDiv = createResidentsDiv();
 }

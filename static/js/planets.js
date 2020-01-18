@@ -16,7 +16,7 @@ export function fillTableOfPlanets(planetsData) {
         for (let td = 0;td < 7; td++){
             if (td === 6) {
                 if (planetsData[tr][td] !== "No known residents") {
-                    html+= "<td>" + '<button type="button" id="'+tr+'">' + planetsData[tr][td] + '</button>' + "</td>";
+                    html+= "<td class='residents'>" + '<button type="button" id="'+tr+'">' + planetsData[tr][td] + '</button>' + "</td>";
                     planetsResidents.push([tr, planetsData[tr][7]]); // fill array with planet residents objects
                 } else {
                     html+= "<td>" + planetsData[tr][td] + "</td>";

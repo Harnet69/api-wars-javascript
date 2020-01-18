@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-planets_specs = ['Name', 'Diameter', 'Climate', 'Terrain', 'Surface Water Percentage', 'Population', 'Residents']
+planets_specs = ['Name', 'Diameter', 'Climate', 'Terrain', 'Surface Water %', 'Population', 'Residents']
 
 
 app = Flask(__name__)
