@@ -59,7 +59,8 @@ export function residentsButton(planetsResidents) {
                 // alert('Mouse click open');
                 // get residents data
                 let bnt = document.getElementById('nav-buttons');
-                let residentDIv = showResidentsDiv(planetResident[1]);
+                let planetName = elem.parentElement.parentElement.firstChild.textContent;
+                let residentDIv = showResidentsDiv(planetName);  // first sibling of elem
                 bnt.appendChild(residentDIv);
                 getResidentInfo(planetResident[1]); // pass residents links list to get data from API
             }

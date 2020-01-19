@@ -44,11 +44,11 @@ export function showResidentsList(planetResidents) {
 }
 
 // create div with data of planet residents
-export function showResidentsDiv() {
+export function showResidentsDiv(planetName) {
     let residentsDiv = document.createElement('div');
     residentsDiv.setAttribute('id', 'resident-div');
     let tableCapture = document.createElement('h3');
-    tableCapture.textContent = 'Planet residents';  //TODO find planets name!!!
+    tableCapture.textContent = planetName+"'s planet residents";  //TODO find planets name!!!
     residentsDiv.appendChild(tableCapture);
     let table = document.createElement('table');
     table.classList.add('residentsDiv');
