@@ -1,5 +1,5 @@
 import {pageDownload, getResidentInfo} from './apiManager.js'
-import {fillTableOfPlanets, prevBtnEl, nextBtnEl, showResidentsList, showResidentsDiv, fillResidentsTable} from './planets.js'
+import {fillTableOfPlanets, prevBtnEl, nextBtnEl, showResidentsList, showResidentsDiv} from './planets.js'
 // add listener to open pop up login form
 export function openPopUpLoginForm(openButton, targetElem) {
     openButton.addEventListener('click', function () {
@@ -66,6 +66,10 @@ export function residentsButton(planetsResidents) {
             else{
                 alert('Mouse click close');
                 document.getElementById('resident-div').remove();
+                let residentsTables = document.getElementsByClassName("residentsDiv");
+                for (let residentsTable of residentsTables){
+                    residentsTable.remove();
+                }
             }
         });
     }

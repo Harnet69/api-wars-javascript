@@ -3,13 +3,8 @@ import {nextPrevBtnListener, residentsButton} from './listeners.js'
 
 export let prevBtnEl = document.getElementById('prev-btn');
 export let nextBtnEl = document.getElementById('next-btn');
-let residentsDiv = document.createElement('div');
-// TODO set only one list of details
-let residentDetails = ['name','height','mass','skin_color', 'hair_color', 'eye_color', 'birth_year', 'gender'];
-// let residentDetailsTd = [data['name'], data['height'], data['mass'], data['skin_color'], data['hair_color'],
-//     data['eye_color'], data['birth_year'], data['gender']];
-
 let planetsResidents = [];
+let residentDetails = ['name','height','mass','skin_color', 'hair_color', 'eye_color', 'birth_year', 'gender'];
 
 // fill table with planets
 export function fillTableOfPlanets(planetsData) {
@@ -50,6 +45,7 @@ export function showResidentsList(planetResidents) {
 
 // create div with data of planet residents
 export function showResidentsDiv() {
+    let residentsDiv = document.createElement('div');
     residentsDiv.setAttribute('id', 'resident-div');
     let table = document.createElement('table');
     table.classList.add('residentsDiv');
@@ -75,13 +71,6 @@ export function showResidentsDiv() {
 }
 
 //  fill the table of residents
-export function fillResidentsTable(planetResidents) {
-    for(let i=0;i<planetResidents.length;i++){
-        getResidentInfo(planetResidents[i]);
-    }
-}
-
-//  fill the table of residents
 export function fillResidentsDetailsTable(data) {
     let tbody = document.getElementsByClassName('resident-details');
     let residentsDetailsTr = document.createElement('tr');
@@ -91,7 +80,6 @@ export function fillResidentsDetailsTable(data) {
         residentsDetailTd.textContent = data[detail];
         residentsDetailsTr.appendChild(residentsDetailTd);
     }
-        // console.log(data['name'], data['height'], data['mass'], data['skin_color'], data['hair_color'], data['eye_color'], data['birth_year'], data['gender']); // generate td for all resident
 }
 
 pageDownload(); // data of planets
