@@ -102,12 +102,27 @@ button:hover{
     background-color: rgba(181, 198, 224, 0.3);
 }
 
+#resident-div{
+    width: 71%;
+}
+
+#resident-div h3{
+    color:  #FFC107;
+    text-align: center;
+}
+
 .residentsDiv{
     color: black;
-    position: absolute;
     width: 71%;
+    position: absolute;
     padding: 0 10px;
     background-color: white;
     border: 4px solid #FFC107;
     border-radius: 10px;
+}
+.residentsDiv tr th {
+    border: 2px solid #FFC107;
+}
+.residentsDiv tr td{
+    border: 2px solid #FFC107;
 }
