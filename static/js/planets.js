@@ -4,7 +4,10 @@ import {nextPrevBtnListener, residentsButton} from './listeners.js'
 export let prevBtnEl = document.getElementById('prev-btn');
 export let nextBtnEl = document.getElementById('next-btn');
 let residentsDiv = document.createElement('div');
-let residentDetails = ['name','height','mass','skin color', 'hair color', 'eye color', 'birth year', 'gender'];
+// TODO set only one list of details
+let residentDetails = ['name','height','mass','skin_color', 'hair_color', 'eye_color', 'birth_year', 'gender'];
+// let residentDetailsTd = [data['name'], data['height'], data['mass'], data['skin_color'], data['hair_color'],
+//     data['eye_color'], data['birth_year'], data['gender']];
 
 let planetsResidents = [];
 
@@ -57,6 +60,9 @@ export function showResidentsDiv() {
     table.appendChild(thead);
     let tr = document.createElement('tr');
     thead.appendChild(tr);
+    let tbody = document.createElement('tbody');
+    tbody.classList.add('resident-details');
+    table.appendChild(tbody);
 
     // th.textContent = 'There is a planets residents';
     // create table headers
@@ -73,6 +79,19 @@ export function fillResidentsTable(planetResidents) {
     for(let i=0;i<planetResidents.length;i++){
         getResidentInfo(planetResidents[i]);
     }
+}
+
+//  fill the table of residents
+export function fillResidentsDetailsTable(data) {
+    let tbody = document.getElementsByClassName('resident-details');
+    let residentsDetailsTr = document.createElement('tr');
+    tbody[0].appendChild(residentsDetailsTr);
+    for(let detail of residentDetails) {
+        let residentsDetailTd = document.createElement('td');
+        residentsDetailTd.textContent = data[detail];
+        residentsDetailsTr.appendChild(residentsDetailTd);
+    }
+        // console.log(data['name'], data['height'], data['mass'], data['skin_color'], data['hair_color'], data['eye_color'], data['birth_year'], data['gender']); // generate td for all resident
 }
 
 pageDownload(); // data of planets
