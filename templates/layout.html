@@ -2,12 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="shortcut icon" type="image/x-icon" href="/static/img/logo_cropped.png">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="shortcut icon" type="image/x-icon" href="/static/img/logo_cropped.png">
+        <link rel="stylesheet" href="/static/css/normalize.css">
         <link rel="stylesheet" href="/static/css/main.css">
         <link rel="stylesheet" href="/static/css/login_form.css">
-        <link rel="stylesheet" href="/static/css/normalize.css">
         <script type="text/javascript" src="/static/js/jquery.js"></script>
         <script type="module" src="/static/js/planets.js"></script>
         <script type="module"  src="/static/js/loginForm.js"></script>
@@ -19,7 +19,7 @@
             <a class="navbar-brand" href="/"><img style="height: 50px" src="/static/img/logo_cropped.png" alt=""></a>
             <button class="open-button" id="open-button">Log in</button>
             <div class="form-popup" id="myForm">
-                <form action="#" class="form-container">
+                <form action="/login" id="login_form" class="form-container" method="post">
                     <label for="login"><b>Login</b>
                         <input type="text" placeholder="user login" name="login" required>
                     </label>

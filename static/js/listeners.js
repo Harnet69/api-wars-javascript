@@ -1,5 +1,6 @@
 import {pageDownload, getResidentInfo} from './apiManager.js'
 import {fillTableOfPlanets, prevBtnEl, nextBtnEl, showResidentsList, showResidentsDiv} from './planets.js'
+
 // add listener to open pop up login form
 export function openPopUpLoginForm(openButton, targetElem) {
     openButton.addEventListener('click', function () {
@@ -13,6 +14,26 @@ export function cancelPopUpLoginForm(cancelButton, targetElem, retrieveElem) {
     cancelButton.addEventListener('click', function () {
         targetElem.classList.remove('display-on');
         retrieveElem.style.display = 'block';
+    })
+}
+
+// add listener to submit from login form
+export function submitFromLoginForm(loginForm) {
+    loginForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // blocking default 'submit by form request' functionality
+
+        const formData = new FormData(this);
+
+        fetch('/login',{
+            method: "post",
+            body: formData
+            }).then(function (response) { // when the response come back
+                return response.text();
+        }).then(function (text) {
+            console.log(text);
+        }).catch(function (error) {
+            console.error(error);
+        })
     })
 }
 
