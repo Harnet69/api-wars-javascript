@@ -56,7 +56,7 @@ export function residentsButton(planetsResidents) {
         // click on residents button to open pop up window
         elem.addEventListener('click', function () {
             if(!document.getElementById('resident-div')) { // if resident was displayed already
-                alert('Mouse click open');
+                // alert('Mouse click open');
                 // get residents data
                 let bnt = document.getElementById('nav-buttons');
                 let residentDIv = showResidentsDiv(planetResident[1]);
@@ -64,7 +64,7 @@ export function residentsButton(planetsResidents) {
                 getResidentInfo(planetResident[1]); // pass residents links list to get data from API
             }
             else{
-                alert('Mouse click close');
+                // alert('Mouse click close');
                 document.getElementById('resident-div').remove();
                 let residentsTables = document.getElementsByClassName("residentsDiv");
                 for (let residentsTable of residentsTables){
