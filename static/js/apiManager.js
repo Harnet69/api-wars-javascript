@@ -6,14 +6,14 @@ export function pageDownload(page='https://swapi.co/api/planets', planetDataREse
         console.log(page,);
         if(planetDataREset){
             let planetsData = [];
-            // removeAllListeners(nextBtnEl);
-            // removeAllListeners(prevBtnEl);
+            removeAllListeners(nextBtnEl);
+            removeAllListeners(prevBtnEl);
         }
         let planetsData = [];
 
     $.get(page, function (data) {
         let results = data["results"];
-        // console.log(results); // !!!!!!!!!!!!!!!!!!!!!!!
+        console.log(results); // !!!!!!!!!!!!!!!!!!!!!!!
         let nextBtnLink = data["next"];
         let prevBtnLink = data["previous"];
 

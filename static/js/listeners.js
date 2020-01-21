@@ -30,7 +30,7 @@ export function submitFromLoginForm(loginForm) {
             }).then(function (response) { // when the response come back
                 return response.text();
         }).then(function (text) {
-            console.log(text);
+            console.log(typeof(text)+"DO all stuff there "+text);
         }).catch(function (error) {
             console.error(error);
         })
@@ -39,18 +39,18 @@ export function submitFromLoginForm(loginForm) {
 
 // add listener to next/previous buttons
 export function nextPrevBtnListener(btn, link) {
-    btn.addEventListener('click', function () {
-        // removeAllListeners(document.getElementById('next-btn'));
+    btn.addEventListener('click', function btnListener() {
+        removeAllListeners(document.getElementById('next-btn'), btnListener);
         document.getElementById("planetsData").innerHTML = '';
         pageDownload(link, true);
     })
 }
 
 // remove all listeners from an element
-export function removeAllListeners(elemForClear) {
+export function removeAllListeners(elemForClear, btnListener) {
     // let new_element = elemForClear.cloneNode(true);
     // elemForClear.parentNode.replaceChild(new_element, elemForClear);
-    elemForClear.removeEventListener('click', nextPrevBtnListener, false);
+    elemForClear.removeEventListener('click', btnListener, false);
 }
 
 // add listeners to planet residents div and button
